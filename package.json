@@ -1,0 +1,24 @@
+{
+  "name": "next-native-ad-template",
+  "version": "1.0.0",
+  "description": "Template using origami build service, to pass to agencies creating native ads / paid posts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Financial-Times/next-native-ad-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Financial-Times/next-native-ad-template/issues"
+  },
+  "homepage": "https://github.com/Financial-Times/next-native-ad-template#readme",
+  "devDependencies": {
+    "handlebars": "^4.0.5",
+    "node-fetch": "^1.5.3"
+  }
+}

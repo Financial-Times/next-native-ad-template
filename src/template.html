@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>[[ REPLACE WITH YOUR TITLE]]</title>
     <link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-grid@^4.2.0,o-header@^6.3.0,o-footer@^5.0.1,o-typography@^4.3.0,o-colors@^3.4.1" />
+	<script>
+		var cutsTheMustard = ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window);
+	</script>
 	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <style>
         * {
@@ -86,6 +89,15 @@
 		</style>
 	<![endif]-->
 
+	<!--[if lt IE 9]>
+	<style>
+		.o-header__top-logo {
+			height: 40px;
+			width: 500px;
+		}
+	</style>
+	<![endif]-->
+
 </head>
 
 <body>
@@ -111,6 +123,53 @@
 
 </header>
 
+
+
+<section class="disclaimer">
+	<div class="o-grid-container">
+		<div class="o-grid-row">
+			<div class="disclaimer__left" data-o-grid-colspan="6">
+				<span class="disclaimer__paid_post">PAID POST</span>
+				<span class="disclaimer__sponsor">BY
+					<span class="disclaimer__sponsor-name">[[SPONSOR NAME HERE]]</span>
+				</span>
+			</div>
+			<div data-o-grid-colspan="6">
+				<p class="disclaimer__sponsor-text">
+					This page was produced by FT<sup>2</sup>, the advertising department of the Financial Times.  The news and editorial staff of the Financial Times has no role in it's preparation.
+				</p>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+
+<section class="o-grid-container">
+    <div class="o-grid-row">
+        <div data-o-grid-colspan="12">
+            <h1>YOUR CONTENT HERE</h1>
+        </div>
+    </div>
+</section>
+
+<footer class="o-footer o-footer--theme-dark" data-o-component="o-footer" data-o-footer--no-js="">
+	<div class="o-footer__container">
+
+		<div class="o-footer__copyright" role="contentinfo">
+			<small>
+				<abbr title="Financial Times" aria-label="F T">FT</abbr> and &#x2018;Financial Times&#x2019; are trademarks of The Financial Times Ltd.<br>
+				The Financial Times and its journalism are subject to a self-regulation regime under the <a href="http://www.ft.com/editorialcode" aria-label="F T Editorial Code of Practice">FT Editorial Code of Practice</a>.
+			</small>
+		</div>
+
+	</div>
+	<div class="o-footer__brand">
+		<div class="o-footer__container">
+			<div class="o-footer__brand-logo"></div>
+		</div>
+	</div>
+</footer>
 
 <div class="o-header__drawer" id="o-header-drawer" data-o-header-drawer="" data-o-header-drawer--no-js="">
 	<div class="o-header__drawer-inner">
@@ -415,53 +474,17 @@
 	</div>
 </div>
 
-<section class="disclaimer">
-	<div class="o-grid-container">
-		<div class="o-grid-row">
-			<div class="disclaimer__left" data-o-grid-colspan="6">
-				<span class="disclaimer__paid_post">PAID POST</span>
-				<span class="disclaimer__sponsor">BY
-					<span class="disclaimer__sponsor-name">[[SPONSOR NAME HERE]]</span>
-				</span>
-			</div>
-			<div data-o-grid-colspan="6">
-				<p class="disclaimer__sponsor-text">
-					This page was produced by FT<sup>2</sup>, the advertising department of the Financial Times.  The news and editorial staff of the Financial Times has no role in it's preparation.
-				</p>
-			</div>
-		</div>
-	</div>
+<script>
+	(function(src) {
+		if (cutsTheMustard) {
+			var o = document.createElement('script');
+			o.async = o.defer = true;
+			o.src = src;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(o, s);
+		}
+	}('https://build.origami.ft.com/v2/bundles/js?modules=o-grid@^4.2.0,o-header@^6.3.0,o-footer@^5.0.1,o-typography@^4.3.0,o-colors@^3.4.1'));
+</script>
 
-</section>
-
-
-<section class="o-grid-container">
-    <div class="o-grid-row">
-        <div data-o-grid-colspan="12">
-            <h1>YOUR CONTENT HERE</h1>
-        </div>
-    </div>
-</section>
-
-<footer class="o-footer o-footer--theme-dark" data-o-component="o-footer" data-o-footer--no-js="">
-	<div class="o-footer__container">
-
-		<div class="o-footer__copyright" role="contentinfo">
-			<small>
-				<abbr title="Financial Times" aria-label="F T">FT</abbr> and &#x2018;Financial Times&#x2019; are trademarks of The Financial Times Ltd.<br>
-				The Financial Times and its journalism are subject to a self-regulation regime under the <a href="http://www.ft.com/editorialcode" aria-label="F T Editorial Code of Practice">FT Editorial Code of Practice</a>.
-			</small>
-		</div>
-
-	</div>
-	<div class="o-footer__brand">
-		<div class="o-footer__container">
-			<div class="o-footer__brand-logo"></div>
-		</div>
-	</div>
-</footer>
-
-
-<script src="https://build.origami.ft.com/v2/bundles/js?modules=o-grid@^4.2.0,o-header@^6.3.0,o-footer@^5.0.1,o-typography@^4.3.0,o-colors@^3.4.1"></script>
 </body>
 </html>

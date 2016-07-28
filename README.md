@@ -12,6 +12,6 @@ https://htmlpreview.github.io/?https://github.com/Financial-Times/next-native-ad
 
 ## Development
 
-You need node and Make on your computer.  Use `make build` to run the build script.  This will pull down some data from an AWS S3 Bucket and use it to build the navigation.
+You need node and Make on your computer.  Use `make build` to run the build script.  This will pull down some data from an AWS S3 Bucket and use it to build the navigation. The output will be in the `dist` directory.
 
 

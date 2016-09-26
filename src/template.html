@@ -13,7 +13,7 @@
         // Swap the 'core' class on the HTML element for an 'enhanced' one
         // We're doing it early in the head to avoid a flash of unstyled content
         document.documentElement.className = document.documentElement.className.replace(/\bcore\b/g, 'enhanced');
-        }	
+        }
 </script>
 	<script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <style>
@@ -55,13 +55,13 @@
 			border-bottom: 3px solid #09a25c;
 			background-color: #DADADA;
 			font-family: MetricWeb,sans-serif;
-			font-size: 15px;
+			font-size: 13px;
 		}
 
 		.disclaimer__left {
 			align-self: center;
 			-ms-flex-item-align: center;
-			margin-top: 10px;
+			margin-top: -10px;
 		}
 
 
@@ -76,9 +76,15 @@
 		}
 
 		.disclaimer__sponsor-text {
-			max-width: 600px;
-			float: right;
+      position: relative;
+      left: 17px;
+      top: 8px;
 		}
+
+		.disclaimer__sponsor {
+			position: relative;
+			/*top: 10px;*/
+  	}
 
 		@media(min-width: 740px) {
 			.disclaimer__paid_post {
@@ -139,16 +145,18 @@
 <section class="disclaimer">
 	<div class="o-grid-container">
 		<div class="o-grid-row">
-			<div class="disclaimer__left" data-o-grid-colspan="6">
+			<div class="disclaimer__left" data-o-grid-colspan="1">
 				<span class="disclaimer__paid_post">PAID POST</span>
-				<span class="disclaimer__sponsor">BY
-					<span class="disclaimer__sponsor-name">[[SPONSOR NAME HERE]]</span>
-				</span>
 			</div>
-			<div data-o-grid-colspan="6">
-				<p class="disclaimer__sponsor-text">
+			<div data-o-grid-colspan="10">
+				<div class="disclaimer__sponsor-text">
+          <span class="disclaimer__sponsor">BY
+            <span class="disclaimer__sponsor-name">[[SPONSOR NAME HERE]]</span>
+          </span>
+          <br>
 					This page was produced by FT<sup>2</sup>, the advertising department of the Financial Times.  The news and editorial staff of the Financial Times had no role in its preparation.
-				</p>
+          <p></p>
+				</div>
 			</div>
 		</div>
 	</div>

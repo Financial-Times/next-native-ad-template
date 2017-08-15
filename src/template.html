@@ -134,13 +134,10 @@
 			.disclaimer__box {
 				top:48px;
 				left:0;
-				width: 100%;
 			}
 
-			.disclaimer__info {
-				position: absolute;
-				right: 10px;
-				top: 10px;
+			.disclaimer .o-tooltip {
+				margin: 0 10px;
 			}
 		}
 	</style>
@@ -166,7 +163,7 @@
 					 data-o-tooltip-close-after="5"
 					 data-o-tooltip-toggle-on-click="true">
 					<div class="o-tooltip-content">
-						Share this article via email.
+						Share this article via email. Share this article via email. Share this article via email. Share this article via email.
 					</div>
 				</div>
 				<div class="o-header__top-column o-header__top-column--left">
@@ -275,7 +272,7 @@
 		}
 
 		function before(n, func) {
-			let result;
+			var result;
 			if (typeof func != 'function') {
 				throw new TypeError('Expected a function')
 			}
@@ -304,7 +301,7 @@
 			});
 
 			window.addEventListener('scroll', function() {
-				const lastScrollPos = window.scrollY;
+				var lastScrollPos = window.scrollY;
 
 				if(lastScrollPos > adPosTop) {
 					adEl.classList.add('sticky');
@@ -338,7 +335,7 @@
 			}
 			s.parentNode.insertBefore(o, s);
 		}
-	}('https://build.origami.ft.com/v2/bundles/js?modules=o-grid@^4.2.0,o-header@^7.0.4,o-footer@^6.0.2,o-typography@^5.0.1,o-colors@^4.0.1,o-tooltip@^2.2.0&autoinit=0'));
+	}('https://build.origami.ft.com/v2/bundles/js?modules=o-grid@^4.3.3,o-header@^7.0.4,o-footer@^6.0.2,o-typography@^5.1.1,o-colors@^4.1.1,o-tooltip@^2.2.0&autoinit=0'));
 </script>
 
 <script>

@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>[[ REPLACE WITH YOUR TITLE]]</title>
-	<link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-grid@^4.2.0,o-header@^7.0.4,o-footer@^6.0.2,o-typography@^5.0.1,o-colors@^4.0.1,o-tooltip@^2.1.1" />
+	<link rel="stylesheet" href="https://build.origami.ft.com/v2/bundles/css?modules=o-grid@^4.2.0,o-header@^7.0.4,o-footer@^6.0.2,o-typography@^5.0.1,o-colors@^4.0.1,o-tooltip@^2.2.3" />
 	<script>
 		var cutsTheMustard = ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window);
 		if (cutsTheMustard) {
@@ -136,6 +136,16 @@
 			top: 4px;
 		}
 
+		.o-tooltip--arrow-above.sticky {
+			position: fixed;
+			top: 52px !important;
+		}
+
+		.o-tooltip--arrow-left.sticky {
+			position: fixed;
+			top: 4px !important;
+		}
+
 
 		@media(max-width: 739px) {
 			.disclaimer__box {
@@ -156,7 +166,7 @@
 	<div class="o-header__row o-header__top">
 		<div class="o-header__container">
 			<div class="o-header__top-wrapper">
-				<section class="disclaimer">
+				<section class="disclaimer" id="disclaimer">
 					<div class="disclaimer__box" id="paid-post-tooltip-target">
 						<span class="disclaimer__paid-post">Paid Post</span>
 						<span class="disclaimer__sponsor">BY NIKKEI</span>
@@ -193,6 +203,24 @@
 <section class="o-grid-container">
 	<div class="o-grid-row">
 		<div data-o-grid-colspan="12">
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
+			<h1>YOUR CONTENT HERE</h1>
 			<h1>YOUR CONTENT HERE</h1>
 			<h1>YOUR CONTENT HERE</h1>
 			<h1>YOUR CONTENT HERE</h1>
@@ -277,43 +305,54 @@
 			});
 		}
 
-		function before(n, func) {
-			var result;
-			if (typeof func != 'function') {
-				throw new TypeError('Expected a function')
-			}
-			return function() {
-				if (--n > 0) {
-					result = func.apply(this)
-				}
-				if (n <= 1) {
-					func = undefined
-				}
-				return result;
-			}
-		}
+		function throttle(func, wait) {
+			let last, timer;
 
-		function once(func) {
-			return before(2, func)
+			return function() {
+				const now = +new Date;
+				const args = arguments;
+				const context = this;
+
+				if(last && now < last + wait) {
+					clearTimeout(timer);
+					timer = setTimeout(function() {
+						last = now;
+						func.apply(context, args);
+					}, wait);
+				}
+				else {
+					last = now;
+					func.apply(context, args);
+				}
+			}
 		}
 
 		function stickyOnScroll() {
 			// Sticky ads
-			var adEl = document.getElementById('paid-post-tooltip-target');
-			var adPosTop = adEl.getBoundingClientRect().top;
+			var adTargetEl = document.getElementById('paid-post-tooltip-target');
+			var adContentEl = document.getElementById('paid-post-tooltip');
+			console.log(adContentEl);
+			var adPosTop = adTargetEl.getBoundingClientRect().top;
 			var closeEl = document.getElementsByClassName('o-tooltip-close')[0];
-			var clickClose = once(function() {
-				closeEl.dispatchEvent(new Event('click', {"bubbles":true }))
-			});
 
+			function closeTooltip() {
+				closeEl.dispatchEvent(new Event('click', {"bubbles":true }));
+			}
+
+			window.addEventListener('scroll', throttle(closeTooltip, 150));
 			window.addEventListener('scroll', function() {
+
+				if(adContentEl.style.display === 'block') {
+
+				}
 				var lastScrollPos = window.scrollY;
 
 				if(lastScrollPos > adPosTop) {
-					adEl.classList.add('sticky');
-					clickClose();
+					adTargetEl.classList.add('sticky');
+					adContentEl.classList.add('sticky');
 				} else {
-					adEl.classList.remove('sticky');
+					adTargetEl.classList.remove('sticky');
+					adContentEl.classList.remove('sticky');
 				}
 			});
 		}
@@ -341,7 +380,7 @@
 			}
 			s.parentNode.insertBefore(o, s);
 		}
-	}('https://build.origami.ft.com/v2/bundles/js?modules=o-grid@^4.3.3,o-header@^7.0.4,o-footer@^6.0.2,o-typography@^5.1.1,o-colors@^4.1.1,o-tooltip@^2.2.0&autoinit=0'));
+	}('https://build.origami.ft.com/v2/bundles/js?modules=o-grid@^4.3.3,o-header@^7.0.4,o-footer@^6.0.2,o-typography@^5.1.1,o-colors@^4.1.1,o-tooltip@^2.2.3&autoinit=0'));
 </script>
 
 <script>

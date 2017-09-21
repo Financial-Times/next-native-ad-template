@@ -331,21 +331,16 @@
 			// Sticky ads
 			var adTargetEl = document.getElementById('paid-post-tooltip-target');
 			var adContentEl = document.getElementById('paid-post-tooltip');
-			var adPosTop = adTargetEl.getBoundingClientRect().top;
+			var headerEl = document.getElementsByClassName('o-header')[0];
+			var adPosTop = headerEl.getBoundingClientRect().height;
 			var closeEl = document.getElementsByClassName('o-tooltip-close')[0];
-
 			function closeTooltip() {
 				closeEl.dispatchEvent(new Event('click', {"bubbles":true }));
 			}
 
 			window.addEventListener('scroll', throttle(closeTooltip, 150));
 			window.addEventListener('scroll', function() {
-
-				if(adContentEl.style.display === 'block') {
-
-				}
 				var lastScrollPos = window.scrollY;
-
 				if(lastScrollPos > adPosTop) {
 					adTargetEl.classList.add('sticky');
 					adContentEl.classList.add('sticky');

@@ -2,7 +2,6 @@
   "name": "next-native-ad-template",
   "version": "1.0.0",
   "description": "Template using origami build service, to pass to agencies creating native ads / paid posts",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

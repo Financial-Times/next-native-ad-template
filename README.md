@@ -4,11 +4,11 @@ Template using origami build service, to pass to agencies creating native ads / 
 
 Download the template here:
 
-https://raw.githubusercontent.com/Financial-Times/next-native-ad-template/master/dist/template.html
+https://raw.githubusercontent.com/Financial-Times/next-native-ad-template/main/dist/template.html
 
 You can view it here:
 
-https://htmlpreview.github.io/?https://github.com/Financial-Times/next-native-ad-template/blob/master/dist/template.html
+https://htmlpreview.github.io/?https://github.com/Financial-Times/next-native-ad-template/blob/main/dist/template.html
 
 ## Development
 

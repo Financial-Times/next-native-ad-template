@@ -4,7 +4,8 @@
   "description": "Template using origami build service, to pass to agencies creating native ads / paid posts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "[ \"$INIT_CWD\" != \"$PWD\" ] || npm_config_yes=true npx check-engine"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,16 @@
   },
   "homepage": "https://github.com/Financial-Times/next-native-ad-template#readme",
   "devDependencies": {
+    "check-engines": "^1.5.0",
     "handlebars": "^4.0.5",
     "node-fetch": "^1.5.3"
+  },
+  "volta": {
+    "node": "16.13.0",
+    "npm": "8.1.3"
+  },
+  "engines": {
+    "node": "12.x",
+    "npm": "7.x || 8.x"
   }
 }
